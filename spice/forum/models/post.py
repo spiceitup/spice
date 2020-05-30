@@ -1,7 +1,10 @@
 from django.db import models
 from spice.common.auditing_entity import AuditingEntity
-from spice.account.models.user import User
 from .forum import Forum
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 
 
 class Post(AuditingEntity):
