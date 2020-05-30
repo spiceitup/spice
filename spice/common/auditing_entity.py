@@ -2,8 +2,8 @@ from django.db import models
 
 
 class AuditingEntity(models.Model):
-    modified_date = models.DateTimeField()
-    created_date = models.DateTimeField()
+    modified_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True
