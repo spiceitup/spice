@@ -1,6 +1,6 @@
 from django.db import models
-from spice.common.auditing_entity import AuditingEntity
-from spice.forum.models.admin import Admin
+from common.auditing_entity import AuditingEntity
+from forum.models.admin import Admin
 
 
 class Role(AuditingEntity):

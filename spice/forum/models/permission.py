@@ -1,7 +1,5 @@
-import uuid
-
 from django.db import models
-from spice.common.auditing_entity import AuditingEntity
+from common.auditing_entity import AuditingEntity
 from .role import Role
 
 

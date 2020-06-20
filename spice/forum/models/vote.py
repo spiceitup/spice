@@ -1,7 +1,7 @@
 from django.db import models
-from spice.common.auditing_entity import AuditingEntity
-from spice.forum.models.post import Post
-from spice.common.enum.vote_type import VoteType
+from common.auditing_entity import AuditingEntity
+from forum.models.post import Post
+from common.enum.vote_type import VoteType
 
 
 class Vote(AuditingEntity):
