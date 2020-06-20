@@ -15,7 +15,7 @@ jobs:
             if [ -n "$CIRCLE_TAG" ]; then
               export SPICE_VERSION=$(git describe --tags)
             fi
-            sed -i.bak "s#'dev'#'$SPICE_VERSION'#" spice/__init__.py
+            sed -i.bak "s#'dev'#'$SPICE_VERSION'#" ./spice/__init__.py
       - run:
           name: Build application Docker image
           command: |
