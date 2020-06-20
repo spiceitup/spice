@@ -11,6 +11,7 @@ jobs:
           name: Set version
           command: |
             ls -la
+            ls -la spice
             export SPICE_VERSION=$(git rev-parse --short HEAD)
             if [ -n "$CIRCLE_TAG" ]; then
               export SPICE_VERSION=$(git describe --tags)
