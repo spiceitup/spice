@@ -8,16 +8,6 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Set version
-          command: |
-            ls -la
-            ls -la spice
-            export SPICE_VERSION=$(git rev-parse --short HEAD)
-            if [ -n "$CIRCLE_TAG" ]; then
-              export SPICE_VERSION=$(git describe --tags)
-            fi
-            sed -i.bak "s#'dev'#'$SPICE_VERSION'#" ./spice/__init__.py
-      - run:
           name: Build application Docker image
           command: |
             docker build \
@@ -25,6 +15,7 @@ jobs:
       - run:
           name: Run tests
           command: |
+            export $(egrep -v '^#' local.env | xargs)
             docker run -d --name db -e POSTGRES_USER -e POSTGRES_PASSWORD postgres:12.2-alpine
             docker run --network container:db --rm -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e POSTGRES_URL -e POSTGRES_PORT spiceitup/spice:latest python manage.py test
           environment:
