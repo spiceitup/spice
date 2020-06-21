@@ -1,7 +1,8 @@
 from django.db import models
-from common.auditing_entity import AuditingEntity
-from .forum import Forum
 from django.contrib.auth import get_user_model
+from spice.common.auditing_entity import AuditingEntity
+
+from .forum import Forum
 
 User = get_user_model()
 

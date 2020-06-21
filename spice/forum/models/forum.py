@@ -1,5 +1,5 @@
 from django.db import models
-from common.auditing_entity import AuditingEntity
+from spice.common.auditing_entity import AuditingEntity
 from django.contrib.auth import get_user_model
 
 User = get_user_model()

@@ -8,6 +8,16 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: Set version
+          command: |
+            ls -la
+            ls -la spice
+            export SPICE_VERSION=$(git rev-parse --short HEAD)
+            if [ -n "$CIRCLE_TAG" ]; then
+              export SPICE_VERSION=$(git describe --tags)
+            fi
+            sed -i.bak "s#'dev'#'$SPICE_VERSION'#" ./spice/__init__.py
+      - run:
           name: Build application Docker image
           command: |
             docker build \

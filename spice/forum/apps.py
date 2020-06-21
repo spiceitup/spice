@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ForumConfig(AppConfig):
-    name = 'forum'
+    name = 'spice.forum'
     verbose_name = 'Forum'

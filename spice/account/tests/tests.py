@@ -1,4 +1,4 @@
-from common.tests import BaseTestCase, fake
+from spice.common.tests import BaseTestCase, fake
 
 
 class ModelAccount(BaseTestCase):

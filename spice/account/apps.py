@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class AccountConfig(AppConfig):
-    name = 'account'
+    name = 'spice.account'
     verbose_name = 'Account'
