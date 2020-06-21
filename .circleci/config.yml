@@ -27,7 +27,7 @@ jobs:
           command: |
             export $(egrep -v '^#' local.env | xargs)
             docker run -d --name db -e POSTGRES_USER -e POSTGRES_PASSWORD postgres:12.2-alpine
-            docker run --network container:db --rm -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e POSTGRES_URL -e POSTGRES_PORT spiceitup/spice:latest pip install -r requirements_test.txt python manage.py test
+            docker run --network container:db --rm -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e POSTGRES_URL -e POSTGRES_PORT spiceitup/spice:latest /bin/bash -c "pip install -r requirements_test.txt && python manage.py test"
           environment:
             POSTGRES_USER: spice
             POSTGRES_PASSWORD: spice
