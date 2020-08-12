@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'spice.account.apps.AccountConfig',
-    'spice.forum.apps.ForumConfig'
+    'spice.forum.apps.ForumConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
